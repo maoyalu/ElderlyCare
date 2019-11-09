@@ -22,6 +22,10 @@
 		3EA46EFC236EA3E10032D43E /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46EFB236EA3E10032D43E /* LocationAnnotation.swift */; };
 		3EA46EFE236ED2200032D43E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EA46EFD236ED2200032D43E /* GoogleService-Info.plist */; };
 		3EA46F02237657770032D43E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46F01237657770032D43E /* HistoryViewController.swift */; };
+		3EA46F062376650C0032D43E /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46F052376650C0032D43E /* AlarmTableViewCell.swift */; };
+		3EA46F08237665520032D43E /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46F07237665520032D43E /* AlarmTableViewController.swift */; };
+		3EA46F0A23766AF70032D43E /* AlarmRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46F0923766AF70032D43E /* AlarmRecord.swift */; };
+		3EA46F0C237687A90032D43E /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46F0B237687A90032D43E /* AnalysisViewController.swift */; };
 		C879FBB37541FCA0DD823513 /* Pods_ElderlyCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5A7AEF62AFA6C9444E5FDB /* Pods_ElderlyCare.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		3EA46EFB236EA3E10032D43E /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		3EA46EFD236ED2200032D43E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3EA46F01237657770032D43E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		3EA46F052376650C0032D43E /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		3EA46F07237665520032D43E /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
+		3EA46F0923766AF70032D43E /* AlarmRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRecord.swift; sourceTree = "<group>"; };
+		3EA46F0B237687A90032D43E /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		563C83D2890B5E7262467252 /* Pods-ElderlyCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElderlyCare.release.xcconfig"; path = "Target Support Files/Pods-ElderlyCare/Pods-ElderlyCare.release.xcconfig"; sourceTree = "<group>"; };
 		6F37177862684048A2DB8652 /* Pods-ElderlyCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElderlyCare.debug.xcconfig"; path = "Target Support Files/Pods-ElderlyCare/Pods-ElderlyCare.debug.xcconfig"; sourceTree = "<group>"; };
 		AB5A7AEF62AFA6C9444E5FDB /* Pods_ElderlyCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElderlyCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +103,9 @@
 				3EA46EF9236E9EB40032D43E /* LocationViewController.swift */,
 				3EA46EFB236EA3E10032D43E /* LocationAnnotation.swift */,
 				3EA46F01237657770032D43E /* HistoryViewController.swift */,
+				3EA46F052376650C0032D43E /* AlarmTableViewCell.swift */,
+				3EA46F07237665520032D43E /* AlarmTableViewController.swift */,
+				3EA46F0B237687A90032D43E /* AnalysisViewController.swift */,
 			);
 			path = ElderlyCare;
 			sourceTree = "<group>";
@@ -103,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3EA46EF0236E82AA0032D43E /* GPSLocation.swift */,
+				3EA46F0923766AF70032D43E /* AlarmRecord.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -256,11 +268,15 @@
 				3EA46EF8236E85150032D43E /* MulticastDelegate.swift in Sources */,
 				3E2273C8236AB26000479E8D /* CardView.swift in Sources */,
 				3EA46F02237657770032D43E /* HistoryViewController.swift in Sources */,
+				3EA46F0A23766AF70032D43E /* AlarmRecord.swift in Sources */,
 				3E2273B6236AAC4200479E8D /* SceneDelegate.swift in Sources */,
 				3EA46EFA236E9EB40032D43E /* LocationViewController.swift in Sources */,
 				3EA46EF1236E82AA0032D43E /* GPSLocation.swift in Sources */,
 				3EA46EF6236E83AD0032D43E /* DatabaseProtocol.swift in Sources */,
+				3EA46F08237665520032D43E /* AlarmTableViewController.swift in Sources */,
 				3EA46EFC236EA3E10032D43E /* LocationAnnotation.swift in Sources */,
+				3EA46F062376650C0032D43E /* AlarmTableViewCell.swift in Sources */,
+				3EA46F0C237687A90032D43E /* AnalysisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

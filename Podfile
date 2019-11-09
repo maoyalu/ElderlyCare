@@ -9,5 +9,7 @@ target 'ElderlyCare' do
 
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Charts'
+  pod 'ChartsRealm'
 
 end

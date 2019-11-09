@@ -192,6 +192,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="copyAddressButton:" destination="Wyw-s3-xQp" eventType="touchUpInside" id="zif-Fu-8HQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.8047945205479452" colorSpace="custom" customColorSpace="displayP3"/>
@@ -313,22 +316,48 @@
             </objects>
             <point key="canvasLocation" x="2065" y="903"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Alarm Table View Controller-->
         <scene sceneID="Uua-eL-Sil">
             <objects>
-                <tableViewController id="uBb-8g-yk0" sceneMemberID="viewController">
+                <tableViewController id="uBb-8g-yk0" customClass="AlarmTableViewController" customModule="ElderlyCare" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fjj-fi-cIa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kgC-f7-wF9">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="100" id="kgC-f7-wF9" customClass="AlarmTableViewCell" customModule="ElderlyCare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kgC-f7-wF9" id="aF5-iz-fyG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ux-wq-cj1">
+                                            <rect key="frame" x="36" y="27" width="342" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwi-5A-Vz9">
+                                            <rect key="frame" x="36" y="56" width="342" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6ux-wq-cj1" secondAttribute="trailing" constant="16" id="0UK-Jl-Q6o"/>
+                                        <constraint firstItem="6ux-wq-cj1" firstAttribute="top" secondItem="aF5-iz-fyG" secondAttribute="topMargin" constant="16" id="2zz-TT-jPC"/>
+                                        <constraint firstItem="6ux-wq-cj1" firstAttribute="leading" secondItem="aF5-iz-fyG" secondAttribute="leadingMargin" constant="16" id="B2z-5M-G9X"/>
+                                        <constraint firstItem="gwi-5A-Vz9" firstAttribute="top" secondItem="6ux-wq-cj1" secondAttribute="bottom" constant="8" id="H3Q-S9-BMK"/>
+                                        <constraint firstItem="gwi-5A-Vz9" firstAttribute="leading" secondItem="aF5-iz-fyG" secondAttribute="leadingMargin" constant="16" id="RPu-sY-OcX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gwi-5A-Vz9" secondAttribute="trailing" constant="16" id="qSp-ih-ikJ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="gwi-5A-Vz9" id="7bO-Au-BkW"/>
+                                    <outlet property="timeLabel" destination="6ux-wq-cj1" id="aJa-Fy-dhM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -339,7 +368,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrO-ri-7S0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="1668"/>
+            <point key="canvasLocation" x="1460.8695652173915" y="1667.7455357142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b3Z-gN-7g3">
@@ -359,21 +388,14 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Analysis View Controller-->
         <scene sceneID="a6y-Qf-Y5z">
             <objects>
-                <viewController id="2iy-gz-hoM" sceneMemberID="viewController">
+                <viewController id="2iy-gz-hoM" customClass="AnalysisViewController" customModule="ElderlyCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qlw-Nm-Ckp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a bar chart." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSI-eS-Edw">
-                                <rect key="frame" x="136" y="89" width="142" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Something more." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIR-gN-x6B">
                                 <rect key="frame" x="142" y="240" width="131" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -381,9 +403,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFJ-wC-oCj" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PaD-6M-IJC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oVb-wQ-gJZ" firstAttribute="trailing" secondItem="nFJ-wC-oCj" secondAttribute="trailing" id="5yh-V0-0UU"/>
+                            <constraint firstItem="nFJ-wC-oCj" firstAttribute="top" secondItem="qlw-Nm-Ckp" secondAttribute="top" id="71u-a2-Ee1"/>
+                            <constraint firstItem="nFJ-wC-oCj" firstAttribute="leading" secondItem="oVb-wQ-gJZ" secondAttribute="leading" id="mJT-L5-AB7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oVb-wQ-gJZ"/>
                     </view>
+                    <connections>
+                        <outlet property="barChartView" destination="nFJ-wC-oCj" id="SPF-Ed-0Wa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44e-vE-7dX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

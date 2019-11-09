@@ -26,5 +26,5 @@ protocol DatabaseProtocol: AnyObject {
 protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType{get set}
     func onGpsChange(change: DatabaseChange, gps: GPSLocation)
-//    func onColorChange(change: DatabaseChange, rgb: RGB)
+    func onAlarmChange(change: DatabaseChange, alarm: [AlarmRecord])
 }

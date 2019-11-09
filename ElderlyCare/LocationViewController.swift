@@ -11,8 +11,20 @@ import MapKit
 import CoreLocation
 
 class LocationViewController: UIViewController, DatabaseListener {
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UILabel!
+    
+    @IBAction func copyAddressButton(_ sender: Any) {
+        UIPasteboard.general.string = addressLabel.text
+        showCopyDone()
+    }
+    
+    func showCopyDone() {
+        let alert = UIAlertController(title: "Done", message: "You have copied the address", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+    }
     
     @IBAction func NavigateButton(_ sender: Any) {
         guard userCurrentCoordinate != nil else {
@@ -116,6 +128,10 @@ class LocationViewController: UIViewController, DatabaseListener {
 //        rgbLabel.text = "R: \(currentRGB.r)    G: \(currentRGB.g)    B: \(currentRGB.b)"
 //        colorBlock.backgroundColor = UIColor(red: CGFloat(currentRGB.r/255), green: CGFloat(currentRGB.g/255), blue: CGFloat(currentRGB.b/255), alpha: 1.0)
 //        colorHexLabel.text = String(format: "#%02X%02X%02X", Int(rgb.r), Int(rgb.g), Int(rgb.b))
+    }
+    
+    func onAlarmChange(change: DatabaseChange, alarm: [AlarmRecord]) {
+        //
     }
     
 

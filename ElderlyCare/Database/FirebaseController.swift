@@ -20,12 +20,15 @@ class FirebaseController: NSObject, DatabaseProtocol {
     var alarmRef: CollectionReference?
     
     var currentGps = GPSLocation()
+    var alarms: [AlarmRecord]
     
     override init() {
         FirebaseApp.configure()
         
         authController = Auth.auth()
         database = Firestore.firestore()
+        
+        alarms = [AlarmRecord]()
         
         super.init()
         
@@ -54,16 +57,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
             print("Current data: \(data)")
             self.currentGps.latitude = documents.first!.data()["latitude"] as? Double
             self.currentGps.longitude = documents.first!.data()["longitude"] as? Double
-//            self.currentRGB.g = documents.first!.data()["G"] as! Double
-//            self.currentRGB.b = documents.first!.data()["B"] as! Double
-//            self.currentRGB.r = documents.first!.data()["R"] as! Double
-//            self.currentPresseure = documents.first!.data()["Pressure"] as! Double
-//            self.currentTemperatureC = documents.first!.data()["TempC"] as! Double
-//            self.currentTemperatureF = documents.first!.data()["TempF"] as! Double
-//            self.currentAltitude = documents.first!.data()["Altitude"] as! Double
-            
-            
-//            print("Current RGB: \(self.currentRGB.r) \(self.currentRGB.g) \(self.currentRGB.b)")
             
             self.listeners.invoke { (listener) in
                 
@@ -79,6 +72,44 @@ class FirebaseController: NSObject, DatabaseProtocol {
             
         }
         
+//        database.collection("Falling").addSnapshotListener { (querySnapshot, error) in
+//            <#code#>
+//        }
+        
+        alarmRef = database.collection("Falling")
+        alarmRef?.addSnapshotListener({ (querySnapshot, error) in
+            guard (querySnapshot?.documents) != nil else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.parseAlarmsSnapshot(snapshot: querySnapshot!)
+        })
+        
+    }
+    
+    func parseAlarmsSnapshot(snapshot: QuerySnapshot){
+        snapshot.documentChanges.forEach { (change) in
+            let documentRef = change.document.documentID
+            let userid = change.document.data()["userid"] as! Int
+            let time = change.document.data()["time"] as! Timestamp
+            print(documentRef)
+            
+            if change.type == .added {
+                print("New alarm: \(change.document.data())")
+                let newAlarm = AlarmRecord()
+                newAlarm.userid = userid
+                newAlarm.time = time.dateValue()
+                newAlarm.id = documentRef
+                
+                alarms.append(newAlarm)
+            }
+        }
+        
+        listeners.invoke { (listener) in
+            if listener.listenerType == ListenerType.alarm {
+                listener.onAlarmChange(change: .update, alarm: alarms)
+            }
+        }
     }
     
     func addListener(listener: DatabaseListener) {
@@ -88,9 +119,9 @@ class FirebaseController: NSObject, DatabaseProtocol {
             listener.onGpsChange(change: .update, gps: currentGps)
         }
         
-//        if listener.listenerType == ListenerType.color {
-//            listener.onColorChange(change: .update, rgb: currentRGB)
-//        }
+        if listener.listenerType == ListenerType.alarm {
+            listener.onAlarmChange(change: .update, alarm: alarms)
+        }
     }
     
     func removeListener(listener: DatabaseListener) {
