@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,16 @@
 		3E2273BB236AAC4200479E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2273B9236AAC4200479E8D /* Main.storyboard */; };
 		3E2273BD236AAC4300479E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2273BC236AAC4300479E8D /* Assets.xcassets */; };
 		3E2273C0236AAC4300479E8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2273BE236AAC4300479E8D /* LaunchScreen.storyboard */; };
+		3E2273C8236AB26000479E8D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2273C7236AB25F00479E8D /* CardView.swift */; };
+		3EA46EF1236E82AA0032D43E /* GPSLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46EF0236E82AA0032D43E /* GPSLocation.swift */; };
+		3EA46EF4236E833A0032D43E /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46EF3236E833A0032D43E /* FirebaseController.swift */; };
+		3EA46EF6236E83AD0032D43E /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46EF5236E83AD0032D43E /* DatabaseProtocol.swift */; };
+		3EA46EF8236E85150032D43E /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46EF7236E85150032D43E /* MulticastDelegate.swift */; };
+		3EA46EFA236E9EB40032D43E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46EF9236E9EB40032D43E /* LocationViewController.swift */; };
+		3EA46EFC236EA3E10032D43E /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46EFB236EA3E10032D43E /* LocationAnnotation.swift */; };
+		3EA46EFE236ED2200032D43E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EA46EFD236ED2200032D43E /* GoogleService-Info.plist */; };
+		3EA46F02237657770032D43E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA46F01237657770032D43E /* HistoryViewController.swift */; };
+		C879FBB37541FCA0DD823513 /* Pods_ElderlyCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5A7AEF62AFA6C9444E5FDB /* Pods_ElderlyCare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,18 @@
 		3E2273BC236AAC4300479E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E2273BF236AAC4300479E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E2273C1236AAC4300479E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E2273C7236AB25F00479E8D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3EA46EF0236E82AA0032D43E /* GPSLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLocation.swift; sourceTree = "<group>"; };
+		3EA46EF3236E833A0032D43E /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		3EA46EF5236E83AD0032D43E /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
+		3EA46EF7236E85150032D43E /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		3EA46EF9236E9EB40032D43E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		3EA46EFB236EA3E10032D43E /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		3EA46EFD236ED2200032D43E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3EA46F01237657770032D43E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		563C83D2890B5E7262467252 /* Pods-ElderlyCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElderlyCare.release.xcconfig"; path = "Target Support Files/Pods-ElderlyCare/Pods-ElderlyCare.release.xcconfig"; sourceTree = "<group>"; };
+		6F37177862684048A2DB8652 /* Pods-ElderlyCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElderlyCare.debug.xcconfig"; path = "Target Support Files/Pods-ElderlyCare/Pods-ElderlyCare.debug.xcconfig"; sourceTree = "<group>"; };
+		AB5A7AEF62AFA6C9444E5FDB /* Pods_ElderlyCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElderlyCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C879FBB37541FCA0DD823513 /* Pods_ElderlyCare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +65,8 @@
 			children = (
 				3E2273B2236AAC4200479E8D /* ElderlyCare */,
 				3E2273B1236AAC4200479E8D /* Products */,
+				6A8854A3514BEDB9886ED25D /* Pods */,
+				7DAF9D0D17A380C5E5603680 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +81,8 @@
 		3E2273B2236AAC4200479E8D /* ElderlyCare */ = {
 			isa = PBXGroup;
 			children = (
+				3EA46EF2236E83050032D43E /* Database */,
+				3EA46EEF236E828E0032D43E /* DataModel */,
 				3E2273B3236AAC4200479E8D /* AppDelegate.swift */,
 				3E2273B5236AAC4200479E8D /* SceneDelegate.swift */,
 				3E2273B7236AAC4200479E8D /* ViewController.swift */,
@@ -63,8 +90,48 @@
 				3E2273BC236AAC4300479E8D /* Assets.xcassets */,
 				3E2273BE236AAC4300479E8D /* LaunchScreen.storyboard */,
 				3E2273C1236AAC4300479E8D /* Info.plist */,
+				3E2273C7236AB25F00479E8D /* CardView.swift */,
+				3EA46EFD236ED2200032D43E /* GoogleService-Info.plist */,
+				3EA46EF9236E9EB40032D43E /* LocationViewController.swift */,
+				3EA46EFB236EA3E10032D43E /* LocationAnnotation.swift */,
+				3EA46F01237657770032D43E /* HistoryViewController.swift */,
 			);
 			path = ElderlyCare;
+			sourceTree = "<group>";
+		};
+		3EA46EEF236E828E0032D43E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3EA46EF0236E82AA0032D43E /* GPSLocation.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		3EA46EF2236E83050032D43E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				3EA46EF3236E833A0032D43E /* FirebaseController.swift */,
+				3EA46EF5236E83AD0032D43E /* DatabaseProtocol.swift */,
+				3EA46EF7236E85150032D43E /* MulticastDelegate.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		6A8854A3514BEDB9886ED25D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F37177862684048A2DB8652 /* Pods-ElderlyCare.debug.xcconfig */,
+				563C83D2890B5E7262467252 /* Pods-ElderlyCare.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7DAF9D0D17A380C5E5603680 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB5A7AEF62AFA6C9444E5FDB /* Pods_ElderlyCare.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E2273C4236AAC4300479E8D /* Build configuration list for PBXNativeTarget "ElderlyCare" */;
 			buildPhases = (
+				6883F83EA295194A16D0D8FD /* [CP] Check Pods Manifest.lock */,
 				3E2273AC236AAC4200479E8D /* Sources */,
 				3E2273AD236AAC4200479E8D /* Frameworks */,
 				3E2273AE236AAC4200479E8D /* Resources */,
+				629090F7AF58808504861E12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E2273C0236AAC4300479E8D /* LaunchScreen.storyboard in Resources */,
+				3EA46EFE236ED2200032D43E /* GoogleService-Info.plist in Resources */,
 				3E2273BD236AAC4300479E8D /* Assets.xcassets in Resources */,
 				3E2273BB236AAC4200479E8D /* Main.storyboard in Resources */,
 			);
@@ -133,14 +203,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		629090F7AF58808504861E12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ElderlyCare/Pods-ElderlyCare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ElderlyCare/Pods-ElderlyCare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ElderlyCare/Pods-ElderlyCare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6883F83EA295194A16D0D8FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ElderlyCare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E2273AC236AAC4200479E8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA46EF4236E833A0032D43E /* FirebaseController.swift in Sources */,
 				3E2273B8236AAC4200479E8D /* ViewController.swift in Sources */,
 				3E2273B4236AAC4200479E8D /* AppDelegate.swift in Sources */,
+				3EA46EF8236E85150032D43E /* MulticastDelegate.swift in Sources */,
+				3E2273C8236AB26000479E8D /* CardView.swift in Sources */,
+				3EA46F02237657770032D43E /* HistoryViewController.swift in Sources */,
 				3E2273B6236AAC4200479E8D /* SceneDelegate.swift in Sources */,
+				3EA46EFA236E9EB40032D43E /* LocationViewController.swift in Sources */,
+				3EA46EF1236E82AA0032D43E /* GPSLocation.swift in Sources */,
+				3EA46EF6236E83AD0032D43E /* DatabaseProtocol.swift in Sources */,
+				3EA46EFC236EA3E10032D43E /* LocationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +402,7 @@
 		};
 		3E2273C5236AAC4300479E8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F37177862684048A2DB8652 /* Pods-ElderlyCare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +421,7 @@
 		};
 		3E2273C6236AAC4300479E8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 563C83D2890B5E7262467252 /* Pods-ElderlyCare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
